@@ -60,6 +60,12 @@ class CardsController < ApplicationController
     end
   end
 
+  def search
+    @cards = Card.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
        # Only allow a list of trusted parameters through.
     def card_params

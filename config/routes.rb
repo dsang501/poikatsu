@@ -1,22 +1,36 @@
 Rails.application.routes.draw do
-   devise_for :admins, controllers: {
-    sessions:      'admins/sessions',
-    passwords:     'admins/passwords',
-    registrations: 'admins/registrations'
-  }
+
+  # admin
+   devise_for :admins
+   namespace :admin do
+    resources :customers,only: [:index,:show,:edit,:update]
+  	resources :cards
+   end
+
+  # customer
   devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
     registrations: 'customers/registrations'
   }
 
-  resources :cards
+  scope module: :customer do
+    resources :cards,only: [:index,:show]
+    get 'search' => 'cards#search'
+    get 'customer/edit' => 'customers#edit'
+    put 'customer' => 'customers#update'
+
+  	resource :customers,only: [:show] do
+  		collection do
+  	     get 'quit'
+  	     patch 'out'
+  	  end
+    end
+  end
   
-  get 'top'=>'products#top'
+  get 'top'=>'cards#top'
 
-  devise_for :users
   root to: "home#index"
-  resources :users
-
+  
   get 'search' => 'cards#search'
 end

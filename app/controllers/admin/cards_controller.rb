@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class Admin::CardsController < ApplicationController
   before_action :set_card, only: %i[ show edit update destroy ]
 
   # GET /cards or /cards.json
@@ -18,6 +18,7 @@ class CardsController < ApplicationController
 
   # GET /cards/1/edit
   def edit
+    @card = Card.find(params[:id])
   end
 
   # POST /cards or /cards.json
@@ -40,8 +41,9 @@ class CardsController < ApplicationController
   # PATCH/PUT /cards/1 or /cards/1.json
   def update
     respond_to do |format|
+      @card = Card.find(params[:id])
       if @card.update(card_params)
-        format.html { redirect_to card_url(@card), notice: "Card was successfully updated." }
+        format.html { redirect_to admin_card_url(@card), notice: "Card was successfully updated." }
         format.json { render :show, status: :ok, location: @card }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -76,4 +78,4 @@ class CardsController < ApplicationController
      def set_card
       #@card = Card.find(params[:id])
     end
-end
+  end

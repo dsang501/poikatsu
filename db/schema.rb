@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_20_054344) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_25_015039) do
   create_table "admins", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,4 +51,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_20_054344) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+  create_table "favorites", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.bigint "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_favorites_on_card_id"
+    t.index ["customer_id", "card_id"], name: "index_favorites_on_customer_id_and_card_id", unique: true
+    t.index ["customer_id"], name: "index_favorites_on_customer_id"
+  end
+
+  add_foreign_key "favorites", "cards"
+  add_foreign_key "favorites", "customers"
 end

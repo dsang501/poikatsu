@@ -1,0 +1,11 @@
+  <div class="card-container">
+
+      <%= link_to card_path(card.id), class: "btn-link", :style=>"color:#0099FF;" do %>
+      <div id="img_field" class="card">
+        <%= attachment_image_tag(card, :image, size: "180x130", fallback: "no_image.jpg") %>
+      </div>
+      <p class="cards-name">
+        <%= card.name %>
+      </p>
+      <% end %>
+  </div>

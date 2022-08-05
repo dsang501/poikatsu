@@ -6,27 +6,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <%= link_to root_path do %>
-        <h1 class="my-0 mr-md-auto font-weight-normal">POIKATSU</h1>
-      <% end %>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
-      </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+  <body id="wrapper">
+    <div class="container">
+      <div id="flash">
+        <%= render "layouts/flash" %>
+      </div>
+      <%= yield %>
     </div>
-    <p class="control">
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
-    </p>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
   </body>
 </html>

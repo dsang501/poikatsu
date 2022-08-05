@@ -1,0 +1,44 @@
+<% provide(:title, "#{@card.name}") %>
+<div class="row">
+	<div class="col-xs-4 col-xs-offset-2 card-show">
+		<%= attachment_image_tag(@card, :image, size: "340x220", fallback: "no_image.jpg" ) %>
+	</div>
+
+				<div class="col-xs-6">
+	  			<div class="field">
+						<p>
+							カード名     <%= @card.name %>
+						</p>
+	  			</div><br>
+				<div class="field">
+					<p>
+						カード説明     <%= @card.description %>
+					</p><br>
+	      </div>
+	      <div class="field">
+					<p>
+						年会費      <%= @card.annual_fee %>
+					</p><br>
+	      </div>
+	      <div class="field">
+					<p>
+						還元率    <%= @card.Reduction_rate %>
+					</p><br>
+	      </div>
+	      <div class="field">
+          <p>
+            ポイント名    <%= @card.point %>
+          </p><br>
+        </div>				
+      </div>
+		</div>
+
+		<% if customer_signed_in? && @card.favorited?(current_customer) %>
+    	<%= button_to customers_card_favorites_path(@card.id), method: :delete do %>
+        <span style="color:red;">★</span>
+    <% end %>
+		<% else %>
+    <%= button_to customers_card_favorites_path(@card.id), method: :post do %>
+        <span>★</span>
+    <% end %>
+	<% end %>

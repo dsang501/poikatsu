@@ -4,7 +4,8 @@ Rails.application.routes.draw do
    devise_for :admins
    namespace :admin do
     resources :customers,only: [:index,:show,:edit,:update]
-  	resources :cards
+  	resources :cards,only: [:index,:new,:create,:show,:edit,:update,]
+    get 'top'=>'cards#top'
    end
 
   # customer
@@ -14,8 +15,10 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations'
   }
 
+  root 'customer/cards#top'
+
   scope module: :customer do
-    resources :cards,only: [:index,:show]
+    resources :cards,only: [:top,:show,:index]
     get 'search' => 'cards#search'
     get 'customer/edit' => 'customers#edit'
     put 'customer' => 'customers#update'
@@ -25,12 +28,10 @@ Rails.application.routes.draw do
   	     get 'quit'
   	     patch 'out'
   	  end
+
+    resources :cards do
+      resource :favorites, only: [:create, :destroy]
+      end
     end
   end
-  
-  get 'top'=>'cards#top'
-
-  root to: "home#index"
-  
-  get 'search' => 'cards#search'
 end

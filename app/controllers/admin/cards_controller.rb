@@ -1,14 +1,10 @@
 class Admin::CardsController < ApplicationController
-  before_action :set_card, only: %i[ show edit update destroy ]
+  before_action :set_card, only: [:show, :edit, :update]
+  before_action :authenticate_admin!
 
-  # GET /cards or /cards.json
-  def index
+  def top
+    now = Time.current
     @cards = Card.all
-  end
-
-  # GET /cards/1 or /cards/1.json
-  def show
-    @card = Card.find(params[:id])
   end
 
   # GET /cards/new
@@ -16,52 +12,43 @@ class Admin::CardsController < ApplicationController
     @card = Card.new
   end
 
+  # POST /cards or /cards.json
+  def create
+    @card = Card.new(card_params)
+    if @card.save
+      flash[:notice] = "カードを登録しました"
+      redirect_to admin_card_path(@card)
+    else
+      render :new
+      end
+    end
+
+  # GET /cards or /cards.json
+  def index
+    @cards = Card.all.page(params[:page]).per(10)
+  end
+
+  # GET /cards/1 or /cards/1.json
+  def show
+    @card = Card.find(params[:id])
+  end  
+
   # GET /cards/1/edit
   def edit
     @card = Card.find(params[:id])
   end
 
-  # POST /cards or /cards.json
-  def create
-    @card = Card.new(card_params)
-
-    respond_to do |format|
-      if @card.save
-        format.html { redirect_to card_url(@card), notice: "Card was successfully created." }
-        format.json { render :show, status: :created, location: @card }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @card.errors, status: :unprocessable_entity }
-        
-        
-      end
-    end
-  end
-
   # PATCH/PUT /cards/1 or /cards/1.json
   def update
-    respond_to do |format|
       @card = Card.find(params[:id])
-      if @card.update(card_params)
-        format.html { redirect_to admin_card_url(@card), notice: "Card was successfully updated." }
-        format.json { render :show, status: :ok, location: @card }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @card.errors, status: :unprocessable_entity }
-      end
+    if @card.update(card_params)    
+      flash[:success] = "カード内容を変更しました"
+      redirect_to admin_card_path(@card)
+    else
+      render :edit
     end
-  end
-
-  # DELETE /cards/1 or /cards/1.json
-  def destroy
-    @card.destroy
-
-    respond_to do |format|
-      format.html { redirect_to cards_url, notice: "Card was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
-
+  end 
+  
   def search
     @cards = Card.search(params[:keyword])
     @keyword = params[:keyword]

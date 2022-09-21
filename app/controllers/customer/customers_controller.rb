@@ -2,6 +2,10 @@ class Customer::CustomersController < ApplicationController
 
   def show
     @customer = current_customer
+    @cards = @customer.cards
+
+    favorites = Favorite.where(customer_id: current_customer.id).pluck(:card_id)
+    @favorite_list = Card.find(favorites)
 	end
 
 	def quit
@@ -12,7 +16,7 @@ class Customer::CustomersController < ApplicationController
     @customer.update(is_valid: true)
 
     reset_session
-    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    flash[:notice] = "またのご利用を心よりお待ちしております。"
     redirect_to root_path
 	end
 
@@ -23,7 +27,7 @@ class Customer::CustomersController < ApplicationController
 	def update
     @customer = current_customer
 		if @customer.update(customer_params)
-       flash[:success] = "登録情報を変更しました"
+       flash[:success] = "登録情報を変更しました。"
        redirect_to customers_path
     else
        render :edit and return
@@ -31,6 +35,12 @@ class Customer::CustomersController < ApplicationController
 	end
 
   def contact
+  end
+
+  def terms_of_service
+  end
+
+  def privacy_policy
   end
 
 	private

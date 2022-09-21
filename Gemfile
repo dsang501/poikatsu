@@ -78,5 +78,7 @@ gem 'sass-rails', '>= 3.2'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'kaminari', '~> 0.17.0'
-gem "jquery-rails"
 gem "webpacker"
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'turbolinks', '~> 5'

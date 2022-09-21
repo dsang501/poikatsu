@@ -1,27 +1,38 @@
 <% provide(:title, "マイページ") %>
 <div class="row">
 	<div class="col-xs-offset-1 col-xs-8">
-		<h2 class="head-line text-center title_h2">マイページ</h2>
-		<p><strong class="information-link"><i class="far fa-user"></i>登録情報</strong>
-			<%= link_to " 編集する", customer_edit_path, class: "glyphicon glyphicon-pencil btn btn-success" %>
-			<%= link_to " パスワードを変更する", edit_customer_registration_path, class: "glyphicon glyphicon-pencil btn btn-warning" %>
-		</p>
+		<h2 class="head-line text-left title_h2"><i class="far fa-user"></i>マイページ</h2>
+		<p><strong class="information-link">登録情報</strong></p>
 
-			<table class="table table-bordered table-condensed" >
-				<tbody>
+			<table class="mypage" frame="border	">
+				<div class="field">
 					<tr>
-						<td class="info col-xs-2">氏名</td>
+						<th>氏名</th>
 						<td class="text-left"><%= full_name(@customer) %></td>
 					</tr>
 					<tr>
-						<td class="info">カナ</td>
+						<th class="info">カナ</th>
 						<td class="text-left"><%= kana_full_name(@customer) %></td>
 					</tr>
 					<tr>
-						<td class="info">メールアドレス</td>
+						<th class="info">メールアドレス</th>
 						<td class="text-left"><%= @customer.email %></td>
 					</tr>
-				</tbody>
-			</table>
+				</div>
+			</table>	
+
+			<div class="edit">
+				<%= link_to " 編集", customer_edit_path, class: "glyphicon glyphicon-th-list btn btn-info" %>
+				<%= link_to " パスワードを変更", edit_customer_registration_path, class: "glyphicon glyphicon-edit btn btn-warning" %>
+			</div>
+
+		<% if @favorite_list.present? %>
+			<p><strong class="information-link">お気に入りカード</strong></p>
+				<div class="card-container-mypage">
+					<% @favorite_list.each do |card| %>
+						<%= render "card_each", card: card %>
+					<% end %>
+				</div>
+		<% end %>
 	</div>
 </div>

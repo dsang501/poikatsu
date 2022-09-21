@@ -1,6 +1,14 @@
 <% provide(:title, "トップ") %>
 <div class="row">
 	<div class="col-xs-12">
-		<h2 class="head-line title_h2 text-center">管理者画面</h2>
+		<h2 class="admin-head">管理者画面</h2>
+
+		<div class="menu">
+			<%= link_to "カード一覧", admin_cards_path, class: "menu_btn glyphicon glyphicon-credit-card"%>
+		</div>
+
+		<div class="menu">
+			<%= link_to "会員一覧", admin_customers_path, class: "menu_btn glyphicon glyphicon-user"%>
+		</div>
 	</div>
 </div>

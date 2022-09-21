@@ -1,37 +1,60 @@
-<% provide(:title, "会員一覧") %>
-  <h2 class="head-line title_h2 text-center">
-    <%= full_name(@customer) %>さんの会員詳細
+<% provide(:title, "登録情報") %>
+  <h2 class="head-line text-center">
+    <%= full_name(@customer) %>さんの登録情報
   </h2>
   <div class="row">
-    <div class="col-xs-8">
+    <div class="col-xs-12">
+    <table class="admin-customer-show">
+
       <div class="field">
-        <p>
-          顧客ID     <%= @customer.id %>
-          <% if @customer.is_valid == true %>
-            <span> <i class="fas fa-bullseye blue"></i>退会済
-          <% elsif @customer.is_valid == false %>
-             <i class="fas fa-bullseye red"></i>有効会員</span>
-          <% end %>
-        </p>
-      </div>
-      <div class="field">
-        <p>
-          氏名      <%= full_name(@customer) %>
-        </p>
-      </div>
-      <div class="field">
-        <p>
-          フリガナ    <%= kana_full_name(@customer) %>
-        </p>
-      </div>
-      <div class="field">
-        <p>
-          メールアドレス <%= @customer.email%>
-        </p>
+        <tr>
+          <th>ID</th>
+            <td><%= @customer.id %></td>
+        </tr>
       </div>
 
-      <div class="actions">
-        <%= link_to "編集する",edit_admin_customer_path(@customer), class: "glyphicon glyphicon-pencil btn btn-success edit_shipping_addres_#{@customer.id}" %>
+      <div class="field">
+        <tr>
+          <th>氏名</th>
+            <td><%= full_name(@customer) %></td>
+        </tr>
       </div>
+
+      <div class="field">
+        <tr>
+          <th>フリガナ</th>
+            <td><%= kana_full_name(@customer) %></td>
+        </tr>
+      </div>
+
+      <div class="field">
+        <tr>
+          <th>メールアドレス</th>
+            <td><%= @customer.email%></td>
+        </tr>
+      </div>
+
+      <div class="field">
+        <tr>
+          <th>ステータス</th>
+            <td>
+              <% if @customer.is_valid == true %>
+                <span>退会済
+              <% elsif @customer.is_valid == false %>
+                 有効会員</span>
+              <% end %>
+            </td>
+        </tr>
+      </div>
+      </table>
+
+      <div class="actions">
+        <div class="admin-customer-edit">
+          <%= link_to "編集",edit_admin_customer_path(@customer), class: "btn btn-success #{@customer.id}" %>
+        </div>
+      </div>
+      <div class="col-xs-12">
+      <%= link_to "＜ 戻る", admin_customers_path, class: "back-page" %>
+    </div>
     </div>
   </div>

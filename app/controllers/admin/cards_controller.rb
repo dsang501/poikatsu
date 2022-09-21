@@ -16,7 +16,7 @@ class Admin::CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     if @card.save
-      flash[:notice] = "カードを登録しました"
+      flash[:notice] = "カードを登録しました。"
       redirect_to admin_card_path(@card)
     else
       render :new
@@ -42,7 +42,7 @@ class Admin::CardsController < ApplicationController
   def update
       @card = Card.find(params[:id])
     if @card.update(card_params)    
-      flash[:success] = "カード内容を変更しました"
+      flash[:success] = "カード内容を変更しました。"
       redirect_to admin_card_path(@card)
     else
       render :edit
@@ -62,7 +62,7 @@ class Admin::CardsController < ApplicationController
     end
 
      # Use callbacks to share common setup or constraints between actions.
-     def set_card
+    def set_card
       #@card = Card.find(params[:id])
     end
   end

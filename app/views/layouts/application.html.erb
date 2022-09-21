@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>POIKATSU</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body id="wrapper">
+    <div id="header">
+      <%= render "layouts/header" %>
+    </div>
     <div class="container">
       <div id="flash">
         <%= render "layouts/flash" %>
       </div>
       <%= yield %>
     </div>
-  </body>
+      <%= render "layouts/footer" %>
+    </body>
 </html>

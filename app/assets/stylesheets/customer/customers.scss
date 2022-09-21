@@ -1,0 +1,73 @@
+.quit {
+  text-align: center;
+  margin-top: 80px;
+}
+.quit-msg {
+	margin: 20px;
+}
+.information-link{
+	font-size: 20px;
+	margin-right: 6px;
+}
+.save {
+    margin-right: 10px;
+	margin-left: 25px;
+}
+.actions {
+	margin-top: 30px;
+}
+.pass-btn {
+	margin-left: 250px;
+}
+.table > tbody > tr > .text-left {
+  	padding-left: 30px;
+}
+
+.fa-user{
+	color: black;
+}
+
+table.mypage {
+	background-color: #EEEEEE;
+	border: 2px solid #C0C0C0;
+	border-collapse: separate;
+	border-radius: 10px;
+	padding-right: 30%;
+	margin-bottom: 5px;
+}
+
+table.mypage th {
+	padding: 10px 10px 10px 20px;
+	color: #C0C0C0;
+}
+
+table.mypage td {
+	padding: 10px 10px 10px 10px;
+}
+
+.edit {
+	text-align: left;
+	margin-bottom: 40px;
+}
+
+.card-container-mypage {
+	float: left;
+	text-align: center;
+	margin-right: 20px;
+}	
+
+.back-page {
+	font-size: 15px;
+	background-color: #DDDDDD;
+	border-radius:10px;
+	padding: 10px 10px 10px 10px;
+}
+
+.back-page:hover {
+  background-color: #EEEEEE;
+  border-radius:10px;
+}
+
+.new-customer-mail {
+	margin-left: 20px;
+}

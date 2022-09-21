@@ -1,8 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>カード一覧</h1>
-
-<div id="cards">
+<h2>カード一覧</h2>
+<div class="clearfix card-box">
   <% @cards.each do |card| %>
     <%= render "card_each", card: card %>
   <% end %>

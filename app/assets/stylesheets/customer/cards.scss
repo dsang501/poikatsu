@@ -1,0 +1,106 @@
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.toppage-head {
+	margin-bottom: 0;
+}
+
+.card-rank {
+  float: left;
+  font-size: 18px;
+  color: red;
+  margin: 40px 0px 5px 30px
+}
+
+.card-headline {
+  margin: 60px 5px 0px 30px
+}
+.card-headline>span {
+	font-size: 18px;
+}
+.card-container {
+	float: left;
+	margin: 30px 15px 20px 10px;
+}
+.card-box {
+	text-align: center;
+}
+
+.cards-name {
+	font-size: 16px;
+  color: #000;
+}
+
+.card-show {
+  font-size: 15px;
+  text-align: center;
+}
+
+.card-favorite {
+  margin-top : 20px;
+  text-align: center;
+}
+
+.button {
+  border-radius: 50px;
+  background-color: #ff0;
+  padding: 5px 20px 5px 20px;
+  border: 50px;
+}
+
+.button2 {
+  border-radius: 50px;
+  background-color: #EEEEEE;
+  padding: 5px 20px 5px 20px;
+  border: 50px;
+}
+
+.sample {
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+ }
+
+.sample p {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  border-radius: 30px;
+  margin:0;
+  color: black;
+  background: #FFE4E1;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.5;
+  padding: 20px 15px;
+  font-family: 'Hannotate SC', 'Meiryo UI', 'Osaka', 'MS ゴシック', 'sans-serif' !important;
+ }
+
+.about {
+  margin-top: 80px;
+  color: black;
+  font-size: 30px;
+  font-family: "arial black";
+  text-align: center;
+}
+
+table.card  {
+  table-layout: fixed;
+  margin-top : 60px;
+}
+table.card th {
+  border: 1px solid #C0C0C0;
+  background-color: #eeeeee;
+  height: 100px;
+  width: 130px;
+  text-align: center;
+}
+table.card td {
+  border: 1px solid #C0C0C0;
+}

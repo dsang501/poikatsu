@@ -34,9 +34,12 @@
           </p><br>
         </div>
 				<div class="actions col-xs-9">
-				<%= link_to "編集する", edit_admin_card_path(@card), data: {"turbolinks" => false}, class: "glyphicon glyphicon-pencil btn btn-success pull-right" %>
+				<%= link_to "編集", edit_admin_card_path(@card), data: {"turbolinks" => false}, class: "btn btn-warning pull-right" %>
 				</div>
       </div>
+    </div>
+		<div class="col-xs-12">
+      <%= link_to "＜ 戻る", admin_cards_path	, class: "back-page" %>
     </div>
   </div>
 </div>

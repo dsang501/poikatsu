@@ -4,21 +4,26 @@
 
   <%= form_for(@card, url: admin_card_path, method: :patch, class: "form-horizontal") do |f| %>
     <%= render "layouts/error_messages", resource: @card%>
-    <div class="col-xs-4">
-      <div class="img_field">
-        <%= attachment_image_tag(@card, :image, size: "250x180") %>
-      </div>
-      <div class="form-group">
-	      <%= f.attachment_field :image, class: " image" %>
+    <div class="col-xs-6">
+      <div class="img-position">
+        <div class="img_field">
+          <%= attachment_image_tag(@card, :image, size: "250x180") %>
+        </div>
+        <div class="form-group">
+          <%= f.attachment_field :image, class: " image" %>
+        </div>
       </div>
     </div>
 
     <div class="col-xs-6">
       <%= render "form_card", f: f %>
       <div class="actions">
-	      <%= f.submit "変更を保存", class: "btn btn-primary pull-right" %>
+	      <%= f.submit "保存", class: "btn btn-danger pull-left" %>
       </div>
 
     </div>
   <% end %>
+  <div class="col-xs-12">
+      <%= link_to "＜ 戻る", admin_card_path	, class: "back-page" %>
+    </div>
 </div>

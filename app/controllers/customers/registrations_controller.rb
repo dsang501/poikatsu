@@ -60,7 +60,7 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   before_action :configure_sign_up_params, only: [:create]
-  before_action :authenticate_customer!, only: [:edit, :update]
+  before_action :authenticate_customer!, only: %i[edit update]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -74,10 +74,6 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  def edit
-    super
-     # @customer = current_customer
-  end
 
   # PUT /resource
   def update
@@ -90,13 +86,13 @@ class Customers::RegistrationsController < Devise::RegistrationsController
       set_flash_message_for_update(resource, prev_unconfirmed_email)
       bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?
       # respond_with resource, location: after_update_path_for(resource)
-      flash[:success] = "パスワード変更しました。"
+      flash[:success] = 'パスワード変更しました。'
       redirect_to customers_path
     else
       clean_up_passwords resource
       set_minimum_password_length
       redirect_to customers_path
-      flash[:alert] = "パスワードを変更できませんでした。"
+      flash[:alert] = 'パスワードを変更できませんでした。'
     end
     # super
   end
@@ -120,9 +116,11 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   def customer_params
     params.require(:customers).permit(:password, :password_confirmation)
   end
+
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-   devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :first_name, :last_name, :kana_first_name, :kana_last_name])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: %i[name first_name last_name kana_first_name kana_last_name])
   end
 
   # If you have extra params to permit, append them to the sanitizer.

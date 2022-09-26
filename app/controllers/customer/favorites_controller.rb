@@ -1,5 +1,4 @@
 class Customer::FavoritesController < ApplicationController
-
   before_action :authenticate_customer!
 
   def create
@@ -11,7 +10,6 @@ class Customer::FavoritesController < ApplicationController
   def destroy
     @card_favorite = Favorite.find_by(customer_id: current_customer.id, card_id: params[:card_id])
     @card_favorite.destroy
-    redirect_to card_path(params[:card_id]) 
+    redirect_to card_path(params[:card_id])
   end
-
 end

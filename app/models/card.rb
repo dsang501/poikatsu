@@ -1,8 +1,8 @@
 class Card < ApplicationRecord
   attachment :image
-  
+
   def self.search(keyword)
-    where("name LIKE ?", "%#{keyword}%")
+    where('name LIKE ?', "%#{keyword}%")
   end
 
   belongs_to :customer, optional: true
@@ -11,5 +11,4 @@ class Card < ApplicationRecord
   def favorited?(customer)
     favorites.where(customer_id: customer.id).exists?
   end
-    
 end

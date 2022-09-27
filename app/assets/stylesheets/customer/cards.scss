@@ -3,9 +3,6 @@
     display: block;
     clear: both;
 }
-.toppage-head {
-	margin-bottom: 0;
-}
 
 .card-rank {
   float: left;
@@ -17,13 +14,12 @@
 .card-headline {
   margin: 60px 5px 0px 30px
 }
-.card-headline>span {
-	font-size: 18px;
-}
+
 .card-container {
 	float: left;
 	margin: 30px 15px 20px 10px;
 }
+
 .card-box {
 	text-align: center;
 }
@@ -56,31 +52,6 @@
   padding: 5px 20px 5px 20px;
   border: 50px;
 }
-
-.sample {
-  position: relative;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  width: 100%;
- }
-
-.sample p {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  border-radius: 30px;
-  margin:0;
-  color: black;
-  background: #FFE4E1;
-  font-size: 18px;
-  text-align: center;
-  line-height: 1.5;
-  padding: 20px 15px;
-  font-family: 'Hannotate SC', 'Meiryo UI', 'Osaka', 'MS ゴシック', 'sans-serif' !important;
- }
 
 .about {
   margin-top: 80px;

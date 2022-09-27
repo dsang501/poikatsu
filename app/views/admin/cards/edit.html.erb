@@ -3,7 +3,7 @@
 <div class="row">
 
   <%= form_for(@card, url: admin_card_path, method: :patch, class: "form-horizontal") do |f| %>
-    <%= render "layouts/error_messages", resource: @card%>
+  <%= render "layouts/error_messages", resource: @card%>
     <div class="col-xs-6">
       <div class="img-position">
         <div class="img_field">
@@ -20,10 +20,10 @@
       <div class="actions">
 	      <%= f.submit "保存", class: "btn btn-danger pull-left" %>
       </div>
-
     </div>
   <% end %>
+  
   <div class="col-xs-12">
-      <%= link_to "＜ 戻る", admin_card_path	, class: "back-page" %>
-    </div>
+    <%= link_to "＜ 戻る", admin_card_path	, class: "back-page" %>
+  </div>
 </div>

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # ログイン時のパスを変更してる
+  # ログイン時のパスを変更
   def after_sign_in_path_for(resource)
     if customer_signed_in?
       customers_path(resource)
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # ログアウト時のパスの変更
+  # ログアウト時のパスを変更
   def after_sign_out_path_for(_resource)
     root_path
   end
@@ -22,13 +22,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up,
                                       keys: %i[first_name last_name kana_first_name kana_last_name email])
 
-    # sign_upの際にnameのデータ操作を許。追加したカラム。
     devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
   end
 
   private
-
-  # before_action作成
 
   def set_card
     @card = Crad.find(params[:id])

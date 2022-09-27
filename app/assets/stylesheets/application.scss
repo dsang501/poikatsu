@@ -13,14 +13,12 @@
  *= require_tree .
  *= require_self
  */
- 
- .notification:not(:last-child){
+.notification:not(:last-child){
 	margin-bottom: 0;
 }
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 
 * {
   margin: 0;
@@ -29,26 +27,6 @@
 }
 .container {
   height: 100%;
-}
-
-select {
-  /* styling */
-  background-color: white;
-  border: thin solid blue;
-  border-radius: 4px;
-  display: inline-block;
-  font: inherit;
-  line-height: 1.5em;
-  padding: 3px 60px 3px 10px;
-  text-align: left;
-
-/* reset */
-margin: 0;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
--webkit-appearance: none;
--moz-appearance: none;
 }
 
 #header {
@@ -67,6 +45,7 @@ box-sizing: border-box;
   color: #000;
   border-radius:10px;
 }
+
 .header-name {
   padding-top: 1px;
   padding-right: 10px;
@@ -91,11 +70,9 @@ box-sizing: border-box;
   height: 2.0em;
   background: #EEEEEE;
 }
-
 .header-search input[type="text"]:focus {
   outline: 0;
 }
-
 .header-search input[type="submit"]{
   cursor: pointer;
   font-family: FontAwesome;
@@ -121,6 +98,7 @@ box-sizing: border-box;
 .new-link{
   text-align: center;
 }
+
 a {
  color: #000;
 }

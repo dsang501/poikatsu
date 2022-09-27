@@ -5,35 +5,30 @@
   <div class="row">
     <div class="col-xs-12">
     <table class="admin-customer-show">
-
       <div class="field">
         <tr>
           <th>ID</th>
             <td><%= @customer.id %></td>
         </tr>
       </div>
-
       <div class="field">
         <tr>
           <th>氏名</th>
             <td><%= full_name(@customer) %></td>
         </tr>
       </div>
-
       <div class="field">
         <tr>
           <th>フリガナ</th>
             <td><%= kana_full_name(@customer) %></td>
         </tr>
       </div>
-
       <div class="field">
         <tr>
           <th>メールアドレス</th>
             <td><%= @customer.email%></td>
         </tr>
       </div>
-
       <div class="field">
         <tr>
           <th>ステータス</th>
@@ -47,14 +42,13 @@
         </tr>
       </div>
       </table>
-
       <div class="actions">
         <div class="admin-customer-edit">
           <%= link_to "編集",edit_admin_customer_path(@customer), class: "btn btn-success #{@customer.id}" %>
         </div>
       </div>
       <div class="col-xs-12">
-      <%= link_to "＜ 戻る", admin_customers_path, class: "back-page" %>
-    </div>
+        <%= link_to "＜ 戻る", admin_customers_path, class: "back-page" %>
+      </div>
     </div>
   </div>

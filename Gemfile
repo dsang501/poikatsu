@@ -76,7 +76,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'kaminari', '~> 0.17.0'
 gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 gem 'rubocop', require: false
@@ -84,3 +83,4 @@ gem 'rubocop-rails', require: false
 gem 'sass-rails', '>= 3.2'
 gem 'turbolinks', '~> 5'
 gem 'webpacker'
+gem 'rspec-rails'

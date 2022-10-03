@@ -24,10 +24,9 @@
       </div>
     </table>
   </div>
-    <div class="text-center"><%= paginate(@cards) %></div>
-    <div class="new-card">
-      <%= link_to new_admin_card_path, data: {"turbolinks" => false}, class: "btn btn-warning pull-top" do %>
-        カードを追加
-      <% end %>
-    </div>
+  <div class="new-card">
+    <%= link_to new_admin_card_path, data: {"turbolinks" => false}, class: "btn btn-warning pull-top" do %>
+      カードを追加
+    <% end %>
+  </div>
 </div>

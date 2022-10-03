@@ -24,7 +24,7 @@ class Admin::CardsController < ApplicationController
 
   # GET /cards or /cards.json
   def index
-    @cards = Card.all.page(params[:page]).per(10)
+    @cards = Card.all
   end
 
   # GET /cards/1 or /cards/1.json

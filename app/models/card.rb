@@ -1,6 +1,9 @@
 class Card < ApplicationRecord
   attachment :image
 
+  validates :name, :description, :annual_fee, :Reduction_rate, :point,
+  presence: true
+
   def self.search(keyword)
     where('name LIKE ?', "%#{keyword}%")
   end

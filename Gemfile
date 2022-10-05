@@ -52,6 +52,8 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -83,4 +85,3 @@ gem 'rubocop-rails', require: false
 gem 'sass-rails', '>= 3.2'
 gem 'turbolinks', '~> 5'
 gem 'webpacker'
-gem 'rspec-rails'

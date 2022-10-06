@@ -8,34 +8,8 @@ RSpec.describe Favorite, type: :model do
   end
 
   describe 'お気に入り機能' do
-    context 'お気に入りできる場合' do
-      it "customer_idとcard_idがあれば保存できる" do
-        expect(@favorite).to be_valid
-      end
-
-      it "card_idが同じでもcustomer_idが違えばお気に入りできる" do
-        another_favorite = FactoryBot.create(:favorite)
-        expect(FactoryBot.create(:favorite, customer_id: another_favorite.customer_id)).to be_valid
-      end
-
-      it "customer_idが同じでもcard_idが違えばお気に入りできる" do
-        another_favorite = FactoryBot.create(:favorite)
-        expect(FactoryBot.create(:favorite, card_id: another_favorite.card_id)).to be_valid
-      end
-    end
-
-    context 'お気に入りできない場合' do
-      it "customer_idが空ではお気に入りできない" do
-        @favorite.customer_id = nil
-        @favorite.valid?
-        expect(@favorite.errors.full_messages).to include "Customer must exist"
-      end
-
-      it "card_idが空ではお気に入りできない" do
-        @favorite.card_id = nil
-        @favorite.valid?
-        expect(@favorite.errors.full_messages).to include "Card must exist"
-      end
+    it "customer_idとcard_idがあれば保存できる" do
+      expect(@favorite).to be_valid
     end
   end
 end

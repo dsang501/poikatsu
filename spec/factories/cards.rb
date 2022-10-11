@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :card do
-    name { "楽天カード" }
+    name { Faker::Lorem.characters(number:10) }
     description { "テスト" }
     annual_fee { "テスト" }
     Reduction_rate { "テスト" }

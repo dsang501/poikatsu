@@ -7,13 +7,4 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { "testtest" }
   end
-
-  factory :田中太郎, class: Customer do
-    first_name { "田中" }
-    last_name { "太郎" }
-    kana_first_name { "タナカ" }
-    kana_last_name { "タロウ" }
-    email { "test@test.com" }
-    password { "testtest" }
-  end
 end

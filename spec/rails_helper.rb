@@ -9,6 +9,7 @@ require 'support/factory_bot'
 require 'devise'
 require File.expand_path("spec/support/controller_macros.rb")
 require_relative 'support/controller_macros'
+require 'capybara/rspec'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

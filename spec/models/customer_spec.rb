@@ -22,5 +22,4 @@ RSpec.describe Customer, type: :model do
     customer = Customer.new(email: nil)
     expect(customer.valid?).to eq(false)
   end
-
 end

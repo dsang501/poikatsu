@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+RSpec.describe Card, type: :request do
   describe 'GET #index' do
     before do
       FactoryBot.create :card
@@ -15,3 +16,4 @@ require 'rails_helper'
       expect(response.body).to include "card"
     end
   end
+end

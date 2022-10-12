@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+RSpec.describe Customer, type: :request do
   describe 'GET #index' do
     before do
       FactoryBot.create :customer
@@ -51,3 +52,4 @@ require 'rails_helper'
       expect(response.status).to eq 401
     end
   end
+end

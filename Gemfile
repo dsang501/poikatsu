@@ -11,7 +11,8 @@ gem 'sprockets-rails'
 
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
-gem 'mysql2'
+gem 'mysql2', group: :development
+gem 'pg', group: :production
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -85,4 +86,4 @@ gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'sass-rails', '>= 3.2'
 gem 'turbolinks', '~> 5'
-gem 'webpacker'
+gem 'webpacker',    '~> 5.0'

@@ -17,6 +17,8 @@
 
  production:
    <<: *default
-   database: poikatsu_production
+   adapter: postgresql
+   encoding: unicode
+   pool: 5
    username: <%= ENV['poikatsu_DATABASE_USERNAME'] %>
    password: <%= ENV['poikatsu_DATABASE_PASSWORD'] %>

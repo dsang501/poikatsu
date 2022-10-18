@@ -1,4 +1,7 @@
 {
+  "name": "poikatsu",
+  "license": "UNLICENSED",
+  "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "@rails/activestorage": "^7.0.3-1",
@@ -9,9 +12,7 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "rails-ujs": "^5.2.8-1",
-    "turbolinks": "^5.2.0",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3"

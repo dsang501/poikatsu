@@ -1,6 +1,6 @@
 <% provide(:title, "#{@card.name}") %>
 	<div class="row">
-		<div class="col-xs-4 col-xs-offset-1">
+		<div class="col-md-4 col-md-offset-1">
 			<div class="card-show">
 				<h2><%= @card.name %></h2>
 				<%= attachment_image_tag(@card, :image, size: "300x200", fallback: "no_image.jpg" ) %>

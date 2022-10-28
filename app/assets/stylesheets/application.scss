@@ -1,4 +1,4 @@
-/*
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -107,14 +107,7 @@
  border-radius: 10px;
  padding: 8px 15px 8px 15px;
 }
-@media (max-width: 599px){
-  .title {
-    width: 120px;
-    margin-left: 0px;
-  }
-}
-
-@media (max-width: 1024px){
+@media (max-width: 800px){
   .title {
     width: 120px;
     margin-left: 0px;
@@ -303,7 +296,7 @@ nav.globalMenuSp.active {
 }
 
 /* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
 	.hamburger {
 		display: none;
 	}

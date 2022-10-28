@@ -72,7 +72,7 @@
     left: 10%;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
 	.header-search {
     width: 100%;
     left: 0px;
@@ -110,7 +110,7 @@
 @media (max-width: 800px){
   .title {
     width: 120px;
-    margin-left: 0px;
+    margin-left: 10px;
   }
 }
 
@@ -203,8 +203,8 @@ body {
   display : block;
   position: fixed;
   z-index : 3;
-  right : 13px;
-  top   : 12px;
+  right : 25px;
+  top   : 15px;
   width : 42px;
   height: 42px;
   cursor: pointer;
@@ -296,7 +296,7 @@ nav.globalMenuSp.active {
 }
 
 /* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 800px) {
 	.hamburger {
 		display: none;
 	}

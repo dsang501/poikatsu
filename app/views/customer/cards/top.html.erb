@@ -1,10 +1,10 @@
-<div class="col-md-10 clearfix card-box">
+<div class="clearfix card-box">
   <% @cards.each do |card| %>
     <%= render "card_each", card: card %>
   <% end %>
 </div>
 
-<div class="col-md-6 clearfix card-box">
+<div class="clearfix card-box">
   <h3 class="card-headline text-left">おすすめカード</h3>
     <% @all_ranks.each.with_index(1) do |card, i| %>
       <div class="card-rank">

@@ -21,13 +21,14 @@
 }
 @media screen and (max-width: 400px) {
 	.card-container {
-width: 100%;
-right: 10px;
-}
+    width: 100%;
+    margin: 10px;
+  }
 }
 
 .card-box {
 	text-align: center;
+  width: 100%;
 }
 
 .cards-name {

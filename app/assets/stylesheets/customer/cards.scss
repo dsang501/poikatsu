@@ -19,6 +19,12 @@
 	float: left;
 	margin: 30px 15px 20px 10px;
 }
+@media screen and (max-width: 400px) {
+	.card-container {
+width: 100%;
+right: 10px;
+}
+}
 
 .card-box {
 	text-align: center;

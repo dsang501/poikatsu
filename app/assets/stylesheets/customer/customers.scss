@@ -74,10 +74,23 @@ table.mypage td {
 text-align: center;
 }
 
-@media screen and (max-width:800px) {
-	.customer-for	{
+@media screen and (min-width:400px)and(max-width:800px) {
+	.customer-form	{
 		font-size: 10px;
 	}
+}
+
+.xxx	{
+margin-left: 20%;
+}
+@media screen and (max-width:400px) {
+	.xxx	{
+		margin-left: 0px;
+	}
+}
+@media screen and (max-width:400px) {
+	.bbb	{
+width: 300px;	}
 }
 
 @media screen and (max-width: 400px) {

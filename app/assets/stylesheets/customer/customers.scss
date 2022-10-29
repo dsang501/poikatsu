@@ -69,3 +69,36 @@ table.mypage td {
 .new-customer-mail {
 	margin-left: 20px;
 }
+
+.customer-form	{
+text-align: center;
+}
+
+@media screen and (min-width:400px) and ( max-width:800px) {
+	.customer-form	{
+		font-size: 10px;}
+		}
+
+@media screen and (max-width: 400px) {
+	.customer-titl	{
+		font-size: 20px;
+	}
+}
+
+.pass-rese	{
+	margin-left: 35%;
+}
+@media screen and (max-width: 400px) {
+	.pass-rese	{
+margin-right: 20%;
+}
+}
+
+.customer-login {
+	margin-bottom: 5%;
+}
+@media screen and (max-width: 400px) {
+	.customer-logi	{
+		right: 10%;
+	}
+}

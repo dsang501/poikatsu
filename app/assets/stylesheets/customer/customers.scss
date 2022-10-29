@@ -74,9 +74,9 @@ table.mypage td {
 text-align: center;
 }
 
-@media screen and (min-width:800px) {
+@media screen and (max-width:800px) {
 	.customer-form	{
-		font-size: 10px;
+		font-size: 10%;
 	}
 }
 

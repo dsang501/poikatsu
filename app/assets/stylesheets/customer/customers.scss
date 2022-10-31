@@ -112,6 +112,12 @@ table.mypage td {
 	}
 }
 
-.aaa {
+@media screen and (max-width:400px) {
+	.customer-form4	{
+		width: 260px;
+	}
+}
+
+.customer-name-field3 {
 	margin-right: 20px;
 }

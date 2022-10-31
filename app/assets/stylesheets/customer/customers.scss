@@ -70,49 +70,38 @@ table.mypage td {
 	margin-left: 20px;
 }
 
-.customer-for	{
-text-align: center;
-}
-
+.customer-form	{
+	margin-left: 20%;
+	}
 @media screen and (max-width:800px) {
 	.customer-form	{
 		font-size: 10px;
 	}
 }
-
-.xxx	{
-margin-left: 20%;
-}
 @media screen and (max-width:400px) {
-	.xxx	{
+	.customer-form	{
 		margin-left: 0px;
 	}
 }
+
 @media screen and (max-width:400px) {
-	.bbb	{
-width: 300px;	}
-}
-
-@media screen and (max-width: 400px) {
-	.customer-titl	{
-		font-size: 20px;
+	.customer-form2	{
+		width: 300px;
 	}
-}
-
-.pass-rese	{
-	margin-left: 35%;
-}
-@media screen and (max-width: 400px) {
-	.pass-rese	{
-margin-right: 20%;
-}
 }
 
 .customer-login {
 	margin-bottom: 5%;
 }
-@media screen and (max-width: 400px) {
-	.customer-logi	{
-		right: 10%;
-	}
+
+@media screen and (max-width:400px) {
+	.aaa	{
+top: 30px;
+right: 110px;	}
+}
+
+@media screen and (max-width:400px) {
+	.bbb	{
+top: 32px;
+right: 237px;	}
 }

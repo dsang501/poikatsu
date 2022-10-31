@@ -121,3 +121,9 @@ table.mypage td {
 .customer-name-field3 {
 	margin-right: 20px;
 }
+
+@media screen and (max-width:400px) {
+	.aaa	{
+			margin-left: 100px;
+	}
+}

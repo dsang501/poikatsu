@@ -135,9 +135,12 @@ table.mypage td {
 }
 
 	.edit-btn	{
-margin-left: 0px;
+		margin-left: 0px;
 	}
-
+	.quit-btn {
+		top: 20px;
+	}
+	
 	@media screen and (max-width:400px) {
 		.pass-edit	{
 			width: 230px;

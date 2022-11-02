@@ -134,3 +134,12 @@ table.mypage td {
 	}
 }
 
+	.edit-btn	{
+margin-left: 0px;
+	}
+
+	@media screen and (max-width:400px) {
+		.pass-edit	{
+			width: 230px;
+		}
+	}

@@ -4,30 +4,30 @@
     <h2 class="head-line title_h2 text-center">登録情報編集</h2>
     <%= form_with(model:@customer, url:customer_path, local: true ,method: :put) do |f| %>
       <%= render "layouts/error_messages", resource: @customer %>
-      <div class="col-xs-12">
-        <div class="form-group col-xs-10">
-          <%= f.label :"氏名", class: "col-sm-offset-3 col-sm-2 control-label" %>
-          <%= f.label :"(姓)", class: "col-sm-1 control-label" %>
-          <%= f.text_field :last_name, class: "last_name col-sm-2 form-control-static name" %>
-          <%= f.label :"(名)", class: "col-sm-1 control-label" %>
-          <%= f.text_field :first_name, class: "first_name col-sm-2 form-control-static name" %>
+        <div class="form-group col-xs-offset-1 col-xs-11">
+          <%= f.label :"氏名", class: "col-sm-2 control-label customer-name-field" %>
+          <%= f.label :"(姓)", class: "col-sm-1 control-label customer-name-field2 customer-name-field3" %>
+          <%= f.text_field :last_name, class: "last_name col-sm-3 form-control-static name customer-form3" %>
+          <%= f.label :"(名)", class: "col-sm-1 control-label customer-name-field2" %>
+          <%= f.text_field :first_name, class: "first_name col-sm-3 form-control-static name customer-form3" %>
         </div>
-        <div class="form-group col-xs-10">
-          <%= f.label :"フリガナ", class: "col-sm-offset-3 col-sm-2 control-label" %>
-          <%= f.label :"(セイ)", class: "col-sm-1 control-label" %>
-          <%= f.text_field :kana_last_name, class: "kana_last_name col-sm-2 form-control-static name" %>
-          <%= f.label :"(メイ)", class: "col-sm-1 control-label" %>
-          <%= f.text_field :kana_first_name, class: "kana_first_name col-sm-2 form-control-static name" %>
+        <div class="form-group col-xs-offset-1 col-xs-11">
+          <%= f.label :"フリガナ", class: "col-sm-2 control-label customer-name-field" %>
+          <%= f.label :"(セイ)", class: "col-sm-1 control-label customer-name-field2 customer-name-field3" %>
+          <%= f.text_field :kana_last_name, class: "kana_last_name col-sm-3 form-control-static name customer-form3" %>
+          <%= f.label :"(メイ)", class: "col-sm-1 control-label customer-name-field2" %>
+          <%= f.text_field :kana_first_name, class: "kana_first_name col-sm-3 form-control-static name customer-form3" %>
         </div>
-        <div class="form-group col-xs-10">
-          <%= f.label :"メールアドレス", class: "col-sm-offset-3 col-sm-3 control-label" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-5 form-control-static" %>
+        <div class="col-xs-offset-1">
+          <div class="form-group col-xs-10">
+            <%= f.label :"メールアドレス", class: " col-sm-4 control-label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-6 form-control-static customer-form3" %>
+          </div>
         </div>
-      </div>
 
-      <div class="actions col-xs-9 col-xs-offset-3">
-        <%= f.submit "編集内容を保存する", class: "btn btn-danger save col-xs-6" %>
-        <%= link_to '退会する', quit_customers_path, class: "btn btn-warning"%>
+      <div class="actions col-xs-9 pull-right">
+        <%= f.submit "編集内容を保存する", class: "btn btn-danger save col-xs-8 edit-btn"%>
+        <%= link_to '退会する', quit_customers_path, class: "btn btn-warning col-xs-8"%>
       </div>
     <% end %>
     <div class="col-xs-12">

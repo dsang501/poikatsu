@@ -1,42 +1,39 @@
 <% provide(:title, "パスワード編集") %>
 <div class="row">
-  <div class="col-xs-offset-1 col-xs-9">
-
+  <div class="col-xs-12">
     <h2 class="head-line title_h2 text-center"><i class="fas fa-key"></i>パスワード編集</h2>
-
     <%= form_for(resource, as: resource_name, url: customer_registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div class="field form-group col-xs-12">
-        <%= f.label :"メールアドレス", class: "col-sm-4 control-label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-4 form-control-static" %>
+      <div class="col-xs-offset-2 form-group col-xs-10">
+        <%= f.label :"メールアドレス", class: "col-sm-3 control-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-4 form-control-static pass-edit" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div class="field form-group col-xs-12">
-        <%= f.label :"現在のパスワード", class: "col-sm-4 control-label" %>
-        <%= f.password_field :current_password, autocomplete: "current-password", class: "col-sm-4 form-control-static" %>
+      <div class="field form-group col-xs-offset-2 col-xs-10">
+        <%= f.label :"現在のパスワード", class: "col-sm-3 control-label" %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "col-sm-4 form-control-static pass-edit" %>
       </div>
       
-      <div class="field form-group col-xs-12">
-        <%= f.label :"新しいパスワード", class: "col-sm-4 control-label" %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "col-sm-4 form-control-static" %><br>
+      <div class="field form-group col-xs-offset-2 col-xs-10">
+        <%= f.label :"新しいパスワード", class: "col-sm-3 control-label" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "col-sm-4 form-control-static pass-edit"%><br>
         <% if @minimum_password_length %>
           <br />
           <em>(<%= @minimum_password_length %>文字以上にして下さい)</em>
         <% end %>
       </div>
 
-      <div class="field form-group col-xs-12">
-        <%= f.label :"パスワード確認", class: "col-sm-4 control-label" %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-sm-4 form-control-static" %>
+      <div class="field form-group col-xs-offset-2 col-xs-10">
+        <%= f.label :"パスワード確認", class: "col-sm-3 control-label" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-sm-4 form-control-static pass-edit" %>
       </div>
 
-      <div class="actions pass-btn  form-group col-xs-12">
-        <%= f.submit "パスワード更新", class: "btn btn-danger col-xs-3 col-xs-offset-1" %>
+      <div class="actions form-group col-xs-9 pull-right">
+        <%= f.submit "パスワード更新", class: "btn btn-danger col-xs-8" %>
       </div>
       <div class="col-xs-12">
       <%= link_to "＜ 戻る", customers_path, class: "back-page" %>

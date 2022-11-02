@@ -1,4 +1,4 @@
-<h2 class="head-line title_h2 text-center">パスワードをお忘れですか?</h2>
+<h2 class="head-line title_h2 text-center pass-reset2">パスワードをお忘れですか?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -8,7 +8,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-6 form-control-static" %>
   </div>
 
-  <div class="actions col-xs-offset-5 col-xs-9">
-    <%= f.submit "メールアドレスに送信", class: "btn btn-primary col-xs-3" %>
+  <div class="actions col-xs-9 pull-right">
+    <%= f.submit "メールアドレスに送信", class: "btn btn-primary col-xs-8" %>
   </div>
 <% end %>

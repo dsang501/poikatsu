@@ -177,7 +177,7 @@ body {
 }
 
 .flash{
-  width: 30%;
+  width: 40%;
   margin-top: 10px;
   font-size: 15px;
   text-align: center;
@@ -196,6 +196,12 @@ body {
 		background-color:#ffdbed;
 		color:#dd6262;
 	}
+}
+@media screen and (max-width: 400px) {
+	.flash {
+    width: 100%;
+
+  }
 }
 
 /*ハンバーガーボタン*/

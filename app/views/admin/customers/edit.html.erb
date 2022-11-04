@@ -29,17 +29,20 @@
           <%= f.text_field :kana_first_name, class: "kana_first_name col-sm-3 form-control-static name customer-form3" %>
         </div>
 
-        <div class="col-xs-offset-1 bbb">
+        <div class="col-xs-offset-1 admin-mail-form">
           <%= render "form_mail", f: f %>
         </div>
 
-      <div class="form-group col-xs-offset-">
-        <%= f.label :"会員ステータス", class: "col-sm- control-label" %>
+      <div class="form-group col-xs-offset-1">
+        <div class="form-group col-xs-12">
+        <%= f.label :"会員ステータス", class: "col-sm-3 control-label" %>
           <%= f.radio_button :is_valid, true %>
           <%= f.label :is_valid, "退会済", {value: :true, style: "display: inline-block;"} %>
           <%= f.radio_button :is_valid, false %>
           <%= f.label :is_valid, "有効", {value: :false, style: "display: inline-block;"} %>
+        </div>
       </div>
+
       <div class="actions col-xs-9 pull-right customer-login">
         <%= f.submit '変更を保存する' ,class: "btn btn-danger col-xs-8" %>
       </div>

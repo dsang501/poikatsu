@@ -74,12 +74,12 @@ table.mypage td {
 	margin-left: 20%;
 	}
 @media screen and (max-width:800px) {
-	.customer-form	{
+	.customer-form {
 		font-size: 10px;
 	}
 }
 @media screen and (max-width:400px) {
-	.customer-form	{
+	.customer-form {
 		margin-left: 0px;
 	}
 }
@@ -134,15 +134,15 @@ table.mypage td {
 	}
 }
 
-	.edit-btn	{
-		margin-left: 0px;
+.edit-btn	{
+	margin-left: 0px;
+}
+.quit-btn {
+	top: 20px;
+}
+
+@media screen and (max-width:400px) {
+	.pass-edit	{
+		width: 230px;
 	}
-	.quit-btn {
-		top: 20px;
-	}
-	
-	@media screen and (max-width:400px) {
-		.pass-edit	{
-			width: 230px;
-		}
-	}
+}

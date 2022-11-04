@@ -9,9 +9,6 @@ form img.thumb {
     height: 180px;
     vertical-align: bottom;
 }
-.img-position {
-  margin-left: 50%;
-}
 
 .head-line {
   text-align: center;
@@ -38,4 +35,23 @@ table.admin-card-index td {
 .new-card {
   text-align:right;
   margin-right: 27%;
+}
+
+@media screen and (max-width:400px) {
+	.card-explanation	{
+		top: 30px;
+	}
+}
+
+@media screen and (max-width:400px) {
+	.cards-show-edit	{
+text-align: center;
+top: -40px;
+	}
+}
+
+@media screen and (max-width:400px) {
+	.img-position	{
+margin-left: 40px;
+	}
 }

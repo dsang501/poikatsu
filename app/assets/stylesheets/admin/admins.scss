@@ -12,3 +12,13 @@
 .menu_btn:hover {
   text-decoration: underline; 
 }
+
+.admin-form {
+   margin-left: 20%;
+}
+
+@media screen and (max-width:400px) {
+	.admin-form	{
+		margin-left: 0px;
+	}
+}

@@ -28,5 +28,23 @@ table.admin-customer-show td {
 }
 
 .admin-customer-edit {
-	margin-left: 59%;
+	margin-bottom: 10px;
+	margin-left: 47%;
+}
+
+.admin-customer-edit-title	{
+padding-bottom: 20px;
+}
+@media screen and (max-width:400px) {
+	.admin-customer-edit-title	{
+font-size: 25px;
+	}
+}
+
+.admin-mail-form	{
+	margin-left: 22px;
+}
+@media screen and (max-width:400px) {
+	.admin-mail-form	{
+margin-left: 0px;	}
 }

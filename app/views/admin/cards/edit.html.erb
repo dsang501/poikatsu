@@ -3,22 +3,20 @@
 <div class="row">
 
   <%= form_for(@card, url: admin_card_path, method: :patch, class: "form-horizontal") do |f| %>
-  <%= render "layouts/error_messages", resource: @card%>
-    <div class="col-xs-6">
-      <div class="img-position">
-        <div class="img_field">
-          <%= attachment_image_tag(@card, :image, size: "250x180") %>
-        </div>
-        <div class="form-group">
-          <%= f.attachment_field :image, class: " image" %>
-        </div>
+    <%= render "layouts/error_messages", resource: @card%>
+    <div class="col-md-offset-1 col-md-4 img-position">
+      <div class="img_field">
+        <%= attachment_image_tag(@card, :image, size: "250x180") %>
+      </div>
+      <div class="form-group ">
+        <%= f.attachment_field :image, class: "image" %>
       </div>
     </div>
 
-    <div class="col-xs-6">
+    <div class="col-md-6 card-explanation">
       <%= render "form_card", f: f %>
-      <div class="actions">
-	      <%= f.submit "保存", class: "btn btn-danger pull-left" %>
+      <div class="actions col-xs-12 cards-show-edit">
+	      <%= f.submit "保存", class: "btn btn-danger" %>
       </div>
     </div>
   <% end %>

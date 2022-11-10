@@ -8,13 +8,27 @@
         <%= render "layouts/error_messages", resource: resource %>
         <%= render "admins/sessions/session", f: f %>
       </div>
-      <div class="col-xs-8 pull-righ text-right pass-reset">
+
+      <div class="col-xs-8 text-right pass-reset">
+        <div class="test-login">
+          <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+            <h4 style="cursor:pointer;">テストログインはこちら</h4>
+          </div>
+        </div>
+          <div id="open" style="display:none;clear:both;">
+            メールアドレス:test@test.com
+          <div class="test-pass">
+            パスワード:testtest
+          </div>
+        </div>
+
         <%= link_to "パスワードを忘れた方はこちら＞", new_password_path(resource_name), class: "btn-link" %>
       </div>
       <div class="actions col-xs-9 pull-right customer-login">
         <%= f.submit "ログイン", class: "btn btn-success btn-lg col-xs-8" %>
       </div>
     <% end %>
+
     <div class="col-xs-12">
       <h3 class="head-line title_h2">登録がお済みではない方</h3>
       <p class="new-link">

@@ -9,21 +9,23 @@
         <%= render "admins/sessions/session", f: f %>
       </div>
 
-      <div class="col-xs-8 text-right pass-reset">
-        <div class="test-login">
-          <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-            <h4 style="cursor:pointer;">テストログインはこちら</h4>
+      <div class="col-xs-12 text-center">
+        <div class="panel-group" id="testlogin">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" data-parent="#testlogin" href="#testloginCollapse">
+              テストログインご希望の方はこちら
+            </a>
+          </h3>
+          <div id="testloginCollapse" class="panel-collapse collapse">
+            <div class="panel-body">
+              メールアドレス:test@test.com<br>
+              パスワード:testtest
+            </div>
           </div>
         </div>
-          <div id="open" style="display:none;clear:both;">
-            メールアドレス:test@test.com
-          <div class="test-pass">
-            パスワード:testtest
-          </div>
-        </div>
-
         <%= link_to "パスワードを忘れた方はこちら＞", new_password_path(resource_name), class: "btn-link" %>
       </div>
+
       <div class="actions col-xs-9 pull-right customer-login">
         <%= f.submit "ログイン", class: "btn btn-success btn-lg col-xs-8" %>
       </div>

@@ -303,7 +303,6 @@ nav.globalMenuSp.active {
   transform: translateX(0%);
 }
 
-/* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
 @media screen and (min-width: 800px) {
 	.hamburger {
 		display: none;

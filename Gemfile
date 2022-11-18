@@ -76,6 +76,10 @@ group :test do
   gem 'webdrivers'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'devise-i18n'

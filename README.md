@@ -28,7 +28,7 @@
 * AWS
 * VPC
 * EC2
-* RDS
+* ACM
 * Route53
 * RSpec
 * rubocop

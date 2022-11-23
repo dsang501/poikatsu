@@ -35,7 +35,7 @@
 * Rubocop
 
 # 機能一覧
-* ユーザー登録、ログイン機能(devise)https://qiita.com/seshiruff4214/items/d72b56c5c08ba7a455f8
+* ユーザー登録、ログイン機能(devise)
 
 * お気に入り機能
 * おすすめ機能

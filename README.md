@@ -5,6 +5,7 @@
   ポイント活動に役立つ情報を収集・管理できるアプリケーションです。
 
 # URL
+  https://poikatsu.tk
 
 # 利用方法
 * 管理者側  
@@ -46,7 +47,7 @@
   ![ER図](https://user-images.githubusercontent.com/80367441/200984102-3fd646f5-6900-42cf-b337-b3057e7f20ac.png)
 
 # インフラ構成図
-
+  ![インフラ構成図](https://user-images.githubusercontent.com/80367441/203473980-9b3f6c6a-0d24-4c32-b1fc-b5f10f5895ac.png)
 
 # 開発環境
   **Ruby on Rails**

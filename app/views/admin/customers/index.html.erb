@@ -1,7 +1,6 @@
 <% provide(:title, "会員一覧") %>
 <h2 class="head-line text-center">会員一覧</h2>
 <div class="row">
-
   <div class="col-xs-12">
     <table class="text-center admin-customer-index" frame="border">
       <div class="field">
@@ -18,7 +17,7 @@
               <%= customer.id %>
             </td>
             <td class="text-left">
-              <%= link_to admin_customer_path(customer), class: "btn-link"  do %>
+              <%= link_to admin_customer_path(customer), class: "btn-link" do %>
                 <i class="far fa-user"></i>
                 <%= full_name(customer) %>
               <% end %>

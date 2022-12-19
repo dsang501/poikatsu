@@ -1,50 +1,49 @@
 <% provide(:title, "#{@card.name}") %>
-	<div class="row">
-	
-		<div class="col-md-4 col-md-offset-1">
-			<div class="card-show">
-				<h2><%= @card.name %></h2>
-				<%= attachment_image_tag(@card, :image, size: "300x200", fallback: "no_image.jpg" ) %>
-			</div>
-			<div class="card-favorite">
-				<% if customer_signed_in? && @card.favorited?(current_customer) %>
-					<%= button_to customers_card_favorites_path(@card.id), class: "button", method: :delete do %>
-					<span>★お気に入り済み</span>
-				<% end %>
-				<% else %>
-					<%= button_to customers_card_favorites_path(@card.id), class: "button2", method: :post do %>
-					<span>☆お気に入りに追加</span>
-					<% end %>
-				<% end %>
-			</div>
+<div class="row">
+	<div class="col-md-4 col-md-offset-1">
+		<div class="card-show">
+			<h2><%= @card.name %></h2>
+			<%= attachment_image_tag(@card, :image, size: "300x200", fallback: "no_image.jpg" ) %>
 		</div>
-
-		<div class="col-md-6">
-			<table class="card" border="1" style="border-collapse: collapse">
-				<div class="field">
-					<tr>
-						<th style="text-align: center;">おすすめポイント</th>
-							<td><%=safe_join(@card.description.split("\n"),tag(:br))%></td>
-					</tr>
-				</div>
-				<div class="field">
-					<tr>
-						<th style="text-align: center;">年会費</th>
-							<td><%= @card.annual_fee %></td>
-					</tr>
-				</div>
-				<div class="field">
-					<tr>
-					<th style="text-align: center;">還元率</th>
-						<td><%= @card.Reduction_rate %></td>
-					</tr>
-				</div>
-				<div class="field">
-					<tr>
-					<th style="text-align: center;">ポイント名</th>
-						<td><%= @card.point %></td>
-					</tr>
-				</div>
-			</table>
+		<div class="card-favorite">
+			<% if customer_signed_in? && @card.favorited?(current_customer) %>
+				<%= button_to customers_card_favorites_path(@card.id), class: "favorite-btn-off", method: :delete do %>
+				<span>★お気に入り済み</span>
+			<% end %>
+			<% else %>
+				<%= button_to customers_card_favorites_path(@card.id), class: "favorite-btn-on", method: :post do %>
+				<span>☆お気に入りに追加</span>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
+
+	<div class="col-md-6">
+		<table class="card" border="1" style="border-collapse: collapse">
+			<div class="field">
+				<tr>
+					<th style="text-align: center;">おすすめポイント</th>
+						<td><%=safe_join(@card.description.split("\n"),tag(:br))%></td>
+				</tr>
+			</div>
+			<div class="field">
+				<tr>
+					<th style="text-align: center;">年会費</th>
+						<td><%= @card.annual_fee %></td>
+				</tr>
+			</div>
+			<div class="field">
+				<tr>
+				<th style="text-align: center;">還元率</th>
+					<td><%= @card.Reduction_rate %></td>
+				</tr>
+			</div>
+			<div class="field">
+				<tr>
+				<th style="text-align: center;">ポイント名</th>
+					<td><%= @card.point %></td>
+				</tr>
+			</div>
+		</table>
+	</div>
+</div>

@@ -1,45 +1,45 @@
 <header>
   <nav class="navbar-left title">
     <% if admin_signed_in? %>
-    <%= link_to "ポイ活", admin_top_path %>
+      <%= link_to "ポイ活", admin_top_path %>
     <% else %>
-    <%= link_to "ポイ活", root_path %>
+      <%= link_to "ポイ活", root_path %>
     <% end %>
   </nav>
 
-  <li class="header-search">
-    <%= render "layouts/search" %>
-  </li>
+    <li class="header-search">
+      <%= render "layouts/search" %>
+    </li>
 
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
   <nav class="globalMenuSp">
     <ul class="nav navbar-nav navbar-right">
       <% if customer_signed_in? %>
-    <li class="header-name">
-      <%= link_to full_name(current_customer) + "さん", customers_path(current_customer), class: "header_btn glyphicon glyphicon-user"%>
-    </li>
-    <li>
-      <%= link_to "ログアウト", destroy_customer_session_path, class: "header_btn glyphicon glyphicon-log-out" %>
-    </li>
+        <li class="header-name">
+          <%= link_to full_name(current_customer) + "さん", customers_path(current_customer), class: "header_btn glyphicon glyphicon-user"%>
+        </li>
+      <li>
+        <%= link_to "ログアウト", destroy_customer_session_path, class: "header_btn glyphicon glyphicon-log-out" %>
+      </li>
     
-      <% elsif admin_signed_in? %>
-    <li>
-      <%= link_to "ログアウト", destroy_admin_session_path, class: "header_btn glyphicon glyphicon-log-out" %>
-    </li>
+    <% elsif admin_signed_in? %>
+      <li>
+        <%= link_to "ログアウト", destroy_admin_session_path, class: "header_btn glyphicon glyphicon-log-out" %>
+      </li>
 
-      <% else %>
-    <li>
-      <%= link_to "新規登録", new_customer_registration_path, data: {"turbolinks" => false}, class: "header_btn glyphicon glyphicon-edit" %>
-    </li>
-    <li>
-      <%= link_to "ログイン", new_customer_session_path, class: "header_btn glyphicon glyphicon-log-in" %>
-    </li>
-      <% end %>
+    <% else %>
+      <li>
+        <%= link_to "新規登録", new_customer_registration_path, data: {"turbolinks" => false}, class: "header_btn glyphicon glyphicon-edit" %>
+      </li>
+      <li>
+        <%= link_to "ログイン", new_customer_session_path, class: "header_btn glyphicon glyphicon-log-in" %>
+      </li>
+    <% end %>
     </ul>
   </nav>
 </header>

@@ -5,7 +5,7 @@
   ポイント活動に役立つ情報を収集・管理できるアプリケーションです。
 
 # URL
-  https://poikatsu.tk
+  https://poikatsu
 
 # 利用方法
 * 管理者側  
